@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+
+    // Start by creating the svg area
+    var svg = d3.select("#my_dataviz")
+        .append("svg")
+        .attr("width", 400)
+        .attr("height", 400)
+
+    // Append a circle
+    svg.append("circle")
+        .attr("id", "circleBasicTooltip")
+        .attr("cx", 150)
+        .attr("cy", 200)
+        .attr("r", 40)
+        .attr("fill", "#69b3a2")
+
+    // create a tooltip
+    
+    // create a tooltip
+    var tooltip = d3.select("#my_dataviz")
+        .append("div")
+        .style("opacity", 0)
+        .attr("class", "tooltip")
+        .style("background-color", "gray")
+        .style("border", "solid")
+        .style("border-width", "2px")
+        .style("border-radius", "5px")
+        .style("padding", "5px")
+        .style('position', 'absolute')
+
+    //
+    d3.select("#circleBasicTooltip")
+        .on("mousemove", function(){
+            tooltip.style("opacity", 1)
+                    .style("top", (event.pageY) + "px")
+                    .style("left", (event.pageX + 10) + "px")
+                    .html("The exact value of<br>this cell is: ")
+        })
+        .on("mouseout", function(){
+            tooltip.style("opacity", 0);
+        });
+
+
+</script>

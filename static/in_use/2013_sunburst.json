@@ -1,0 +1,937 @@
+{
+    "name": "direction",
+    "children": [
+        {
+            "name": "南风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "O3_IAQI",
+                            "size": 22
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 13
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 4
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 28
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 23
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 22
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 30
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 28
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 22
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 32
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 28
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 22
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 35
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 28
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 22
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 36
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 28
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 22
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "西南风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "O3_IAQI",
+                            "size": 13
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 6
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 19
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 13
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 13
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 19
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 13
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 19
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 13
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 20
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 19
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 13
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 23
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 19
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 13
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "西风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 17
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 36
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 12
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 4
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 36
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 14
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 4
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 36
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 4
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 36
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 4
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 36
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 22
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 4
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 3
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "西北风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "O3_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 2
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 11
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 2
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 20
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 2
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 20
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 2
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 23
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 2
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "北风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "O3_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 11
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 26
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 5
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 26
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 8
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 26
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 10
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 26
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 16
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 26
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 18
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 16
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "东北风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "O3_IAQI",
+                            "size": 14
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "O3_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 11
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 16
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 17
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 15
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "东风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 6
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 4
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 26
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 13
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 28
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 23
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 29
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 24
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 29
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 24
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 1
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 32
+                        },
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 26
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 1
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "东南风",
+            "children": [
+                {
+                    "name": "优",
+                    "children": [
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 8
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 6
+                        }
+                    ]
+                },
+                {
+                    "name": "良",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 42
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 37
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 9
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 7
+                        }
+                    ]
+                },
+                {
+                    "name": "轻度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 68
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 46
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 9
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 7
+                        }
+                    ]
+                },
+                {
+                    "name": "中度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 68
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 52
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 9
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 7
+                        }
+                    ]
+                },
+                {
+                    "name": "重度污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 68
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 53
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 9
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 7
+                        }
+                    ]
+                },
+                {
+                    "name": "严重污染",
+                    "children": [
+                        {
+                            "name": "PM2.5_IAQI",
+                            "size": 69
+                        },
+                        {
+                            "name": "PM10_IAQI",
+                            "size": 54
+                        },
+                        {
+                            "name": "NO2_IAQI",
+                            "size": 9
+                        },
+                        {
+                            "name": "O3_IAQI",
+                            "size": 7
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

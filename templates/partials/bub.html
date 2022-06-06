@@ -1,0 +1,12 @@
+<script>
+    function clearcontent(elementID) { 
+        var div = document.getElementById(elementID);   
+        while(div.firstChild) {  
+        div.removeChild(div.firstChild); 
+        }   
+    }
+
+    clearcontent('everydayAQI')
+</script>
+
+<script src="{{ url_for('static', filename='js/bubble_zoom.js') }}"></script>

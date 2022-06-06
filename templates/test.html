@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js & color palette -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="divBox">
+    <svg id="my_dataviz2" height=300 width=450></svg>
+</div>
+
+<script>
+
+    // select the svg area
+    var Svg = d3.select("#my_dataviz2")
+
+    // create a list of keys
+    var keys = ["Mister A", "Brigitte", "Eleonore", "Another friend", "Batman"]
+
+    // Usually you have a color scale in your chart already
+    var color = d3.scaleOrdinal()
+        .domain(keys)
+        .range(d3.schemeSet2);
+
+    // Add one dot in the legend for each name.
+    var g =  Svg.selectAll("g")
+                .data(keys).enter()
+                .append("g")
+    g.append('rect')
+        .attr("x", 0)
+        .attr("y", function (d, i) { return 100 + i * 25 }) // 100 is where the first dot appears. 25 is the distance between dots
+        .attr('width', 30)
+        .attr('height', 20)
+        .attr('rx', 5)
+        .style("fill", function (d) { return color(d) })
+    g.append('text')
+        .attr("x", 5)
+        .attr("y", function(d, i) {
+            return -45 + i*25
+        })
+        .attr('dy', '10em')
+        .text('hi')
+</script>
