@@ -26,7 +26,6 @@ for (var i = 0; i < times.length; i++) {
     })
 }
 
-
 // part1 rank
 // 啥都不选的时候(无论是中国地图还是省级地图) rank图默认比较 新出台的七大地理分区规划
 // 只能在同一层级上做rank（省之间rank、市之间rank）
@@ -217,7 +216,7 @@ const render_stack = function (naiveData, naiveStack, naiveKeys, search_obj, max
         .attr('transform', `translate(0, ${innerHeight_stack})`)
 
     // 添加每一组 
-    g.selectAll('.stack_group').data(naiveStack).join('g')
+    g.selectAll('.stack_group').data(naiveStack).enter().append('g')
         .attr('class', 'stack_group')
         .attr('id', function(d, i) {
             console.log(`stack_group${i}`)
@@ -253,7 +252,7 @@ const render_stack = function (naiveData, naiveStack, naiveKeys, search_obj, max
         })
         .style('opacity', 0)
         // 为每一组添加柱形
-        .selectAll('.stack_rect').data(datum => datum).join('rect')
+        .selectAll('.stack_rect').data(datum => datum).enter().append('rect')
             .attr('class', 'stack_rect')
             .attr('y', datum => yScale(datum[1]))
             .attr('x', datum => xScale(datum.data[search_obj]))
@@ -263,7 +262,7 @@ const render_stack = function (naiveData, naiveStack, naiveKeys, search_obj, max
     
     // 为每一组添加数值
     g.selectAll('.stack_group').selectAll('.stack_text')
-        .data(datum => datum).join('text')
+        .data(datum => datum).enter().append('text')
         .attr('class', 'stack_text')
         .attr('x', datum => xScale(datum.data[search_obj]) + 2 )
         .attr('y', datum => yScale(datum[1]) + 10)

@@ -90,8 +90,8 @@ if (type == "rh") {
             .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
         // Add a clipPath: everything out of this area won't be drawn.
-        var clip = Svg.append("defs").append("svg:clipPath")
-            .attr("id", "clip")
+        var clip_bub = Svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip_bub")
             .append("svg:rect")
             .attr("width", width)
             .attr("height", height)
@@ -151,7 +151,7 @@ if (type == "rh") {
 
         // Create the scatter variable: where both the circles and the brush take place
         var scatter = Svg.append('g')
-            .attr("clip-path", "url(#clip)")
+            .attr("clip-path", "url(#clip_bub)")
 
         // Add circles
         scatter
@@ -368,8 +368,8 @@ if (type == "temp") {
             .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
         // Add a clipPath: everything out of this area won't be drawn.
-        var clip = Svg.append("defs").append("svg:clipPath")
-            .attr("id", "clip")
+        var clip_bub = Svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip_bub")
             .append("svg:rect")
             .attr("width", width)
             .attr("height", height)
@@ -429,7 +429,7 @@ if (type == "temp") {
 
         // Create the scatter variable: where both the circles and the brush take place
         var scatter = Svg.append('g')
-            .attr("clip-path", "url(#clip)")
+            .attr("clip-path", "url(#clip_bub)")
 
         // Add circles
         scatter
@@ -647,8 +647,8 @@ if (type == "psfc") {
             .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
         // Add a clipPath: everything out of this area won't be drawn.
-        var clip = Svg.append("defs").append("svg:clipPath")
-            .attr("id", "clip")
+        var clip_bub = Svg.append("defs").append("svg:clipPath")
+            .attr("id", "clip_bub")
             .append("svg:rect")
             .attr("width", width)
             .attr("height", height)
@@ -708,7 +708,7 @@ if (type == "psfc") {
 
         // Create the scatter variable: where both the circles and the brush take place
         var scatter = Svg.append('g')
-            .attr("clip-path", "url(#clip)")
+            .attr("clip-path", "url(#clip_bub)")
 
         // Add circles
         scatter
