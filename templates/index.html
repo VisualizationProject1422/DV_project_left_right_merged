@@ -10,6 +10,7 @@
 
     <!-- load jquery -->
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
     <!-- load d3 -->
     <script src="https://d3js.org/d3.v5.js"></script>
@@ -20,10 +21,26 @@
     <link rel="stylesheet" href="../static/css/index.css">
     <script src="https://unpkg.com/htmx.org@1.6.1" integrity="sha384-tvG/2mnCFmGQzYC1Oh3qxQ7CkQ9kMzYjWZSNtrRZygHPDDqottzEJsqS4oUVodhW" crossorigin="anonymous"></script>
     
+    <!-- load Echart -->
+    <script type="text/javascript" src="{{ url_for('static', filename='echarts.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='echarts-gl.min.js') }}"></script>
 
+    <!-- config map API -->
+    <script type="text/javascript"
+        src="https://api.map.baidu.com/getscript?v=3.0&ak=SSMP8MWDwRzUwafch7SGK9N5L4ET28IZ"></script>
+    <script type="text/javascript"
+        src="https://fastly.jsdelivr.net/npm/echarts@5.3.2/dist/extension/bmap.min.js"></script>
+    <style type="text/css">
+        .BMap_cpyCtrl {
+            display: none;
+        }
+    </style>
+    <style type="text/css">
+        .anchorBL {
+            display: none;
+        }
+    </style>
 
-
-    
 </head>
 
 <body>
@@ -39,9 +56,19 @@
     </div>
 
     <div id="middlePart">
-        <svg id="centerMap"></svg>
-        <svg id="timeLine"></svg>
-        <svg id="timeBubble"></svg>
+        <g id="centerMap"></g>
+        <g id="timeLine"></g>
+        <g id="themeRiver"></g>
+        <input type="checkbox" id="switch" onclick="bt1()" /><label for="switch">Toggle</label>
+        <div id="selectedtext">
+            <p id='p_area'>选择地区 ：</p>
+            <p id='p_time'>选择时间 ：</p>
+        </div>
+        <div id="sendbutton">
+            <input id="clear" type="button" value="清除">
+            <p> </p>
+            <input id="send" type="button" value="发送">
+        </div>
     </div>
     
     <div id="rightPart">
@@ -142,15 +169,25 @@
         <div class="province">湖州市</div>
         <div class="province">温州市</div>
 
-        <input id="send" type="button" value="发送">
+        <!-- <input id="send" type="button" value="发送"> -->
     </div>
 
 </body>
+
+    <!-- load my js -->
+    
+    <!-- middle -->
+    <script src="{{url_for('static',filename='js/middleFunction.js')}}"></script>
+    <script src="{{url_for('static',filename='js/middleInit.js')}}"></script>
+    <script src="{{url_for('static',filename='js/adcode.js')}}"></script>
+
+    <!-- right -->
     <script src="{{ url_for('static', filename='js/parallel.js') }}"></script>
     <script src="{{ url_for('static', filename='js/sunburst.js') }}"></script>
     <script src="{{ url_for('static', filename='js/spiral.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bubble_zoom.js') }}"></script>   
 
+    <!-- left -->
     <script src="../static/js/utils.js"></script>
     <script src="../static/js/index.js"></script>
 

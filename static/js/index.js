@@ -1,7 +1,3 @@
-document.onclick = function(e) {
-    console.log(e.pageX)
-    console.log(e.pageY)
-}
 // 参数
 // layer_time: 表示目前选中的时间粒度  year/month/day
 // layer_geo：此刻地图显示在哪一层级。province/city
