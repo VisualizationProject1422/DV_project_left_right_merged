@@ -4,9 +4,9 @@ import csv
 import math
 from re import A, I
 # import preprocess as pre
-import pandas as pd
+# import pandas as pd
 import os
-import numpy as np
+# import numpy as np
 from flask_sqlalchemy import SQLAlchemy
 import jinja_partials
 

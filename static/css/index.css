@@ -139,23 +139,31 @@ body {
     position: absolute;
     width: 481px;
     height: 321px;
-    /* background-color: gray; */
 }
 
 #middlePart #timeLine {
     position: absolute;
     width: 481px;
-    height: 38px;
+    height: 98px;
     top: 326px;
-    /* background-color: gray; */
 }
 
-#middlePart #timeBubble {
+#middlePart #bt1 {
+    position: absolute;
+    top: 430px;
+}
+
+#middlePart #bt2 {
+    position: absolute;
+    top: 400px;
+    left: 200px;
+}
+
+#middlePart #themeRiver {
     position: absolute;
     width: 481px;
-    height: 280px;
-    top: 369px;
-    /* background-color: gray; */
+    height: 225px;
+    top: 424px;
 }
 
 
