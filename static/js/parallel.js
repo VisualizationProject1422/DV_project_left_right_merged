@@ -5,8 +5,8 @@
 
 // set the dimensions and margins of the graph
 var margin_pap = { top: 30, right: 50, bottom: 10, left: 50 },
-  width_pap = 270 - margin.left - margin.right,
-  height_pap = 150 - margin.top - margin.bottom;
+  width_pap = 420 - margin.left - margin.right,
+  height_pap = 180 - margin.top - margin.bottom;
 
 // append the svg_pap object to the body of the page
 var svg_pap = d3.select("#calendar")

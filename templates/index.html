@@ -46,8 +46,8 @@
     
     <div id="rightPart">
         <div id="control">
-            <div>
-                <label class = "select_title"><br>省份：<br></label>
+            <div id = "selection1">
+                <label class = "select_title">省份：<label>
                     <select name="province" hx-get="/cities/" 
                     hx-target="#cities" hx-indicator=".htmx-indicator" id ="provinces" hx-trigger="change, load" class ="select">
                     {% for province in provinces %}
@@ -57,8 +57,8 @@
                     </select>
             </div>
     
-            <div>
-                <label class = "select_title">城市：<br></label>
+            <div id = "selection2">
+                <label class = "select_title">城市：</label>
                     <select id="cities" name="city" hx-get="/areas/"  
                     hx-trigger="change, htmx:afterSettle" hx-target="#areas"  
                     hx-indicator=".htmx-indicator" class ="select">
@@ -70,8 +70,8 @@
                 {{ render_partial('partials/areas.html', areas=areas) }}
             </div>
 
-            <div>
-                <label class = "select_title">年份：<br></label>
+            <div id = "selection3">
+                <label class = "select_title">年份：</label>
                     <select name="year" id ="year" class ="select"  hx-get="/areas/"  
                     hx-trigger="change, htmx:afterSettle" hx-target="#areas"  
                     hx-indicator=".htmx-indicator" >
@@ -85,7 +85,7 @@
         <div id="pie"></div>
         <div id="everydayAQI"></div>
         <div id = "bubselect">
-            <label class = "select_bub">y轴<br></label>
+            <label id = "select_bub">y轴<br></label>
                 <select name="bub" id ="bub" class ="bubselector"  hx-get="/bub/"  
                 hx-trigger="change, htmx:afterSettle" hx-target="#areas"  
                 hx-indicator=".htmx-indicator" >
