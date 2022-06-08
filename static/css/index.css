@@ -242,28 +242,27 @@ body {
     border: 1px solid #000;
 }
 
+#middlePart #centerMapTitle {
+    width: 493px;
+    height: 34px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 34px;
+    font-size: 18px;
+    text-align: center;
+}
 #middlePart #centerMap {
     position: absolute;
     width: 493px;
     height: 321px;
-    top: 40px;
-}
-
-#middlePart #centerMapTitle {
-    width: 493px;
-    height: 36px;
-    background-color: #a9a9a9;
-    position: absolute;
-    line-height: 36px;
-    font-size: 20px;
-    text-align: center;
+    top: 35px;
 }
 
 #middlePart #timeLine {
     position: absolute;
     width: 493px;
     height: 98px;
-    top: 366px;
+    top: 360px;
 }
 
 #middlePart #bt1 {
@@ -277,22 +276,21 @@ body {
     left: 200px;
 }
 
+#middlePart #themeRiverTitle {
+    width: 493px;
+    height: 30px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 30px;
+    font-size: 12px;
+    top: 460px;
+    text-align: center;
+}
 #middlePart #themeRiver {
     position: absolute;
     width: 493px;
     height: 225px;
-    top: 496px;
-}
-
-#middlePart #themeRiverTitle {
-    width: 493px;
-    height: 36px;
-    background-color: #a9a9a9;
-    position: absolute;
-    line-height: 36px;
-    font-size: 20px;
-    top: 460px;
-    text-align: center;
+    top: 490px;
 }
 
 #middlePart #cheap {
@@ -362,30 +360,21 @@ body {
 }
 
 
+#rightPart #calendarTitle {
+    width: 469px;
+    height: 30px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+}
 #rightPart #calendar {
     position: absolute;
     width: 600px;
     height: 170px;
     top: 45px;
     left: 15px;
-}
-#rightPart #calendarTitle {
-    width: 469px;
-    height: 36px;
-    background-color: #a9a9a9;
-    position: absolute;
-    line-height: 36px;
-    font-size: 20px;
-    text-align: center;
-}
-
-#rightPart #radar {
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    top: 230px;
-    left: 0px;
-    /* background-color: gray; */
 }
 
 #rightPart #radarTitle {
@@ -394,57 +383,52 @@ body {
     background-color: #a9a9a9;
     position: absolute;
     line-height: 30px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
-    top: 220px;
+    top: 225px;
 }
-
-
-
-#rightPart #pie {
+#rightPart #radar {
     position: absolute;
-    width: 220px;
-    height: 220px;
-    top: 223px;
-    left: 230px;
+    width: 250px;
+    height: 250px;
+    top: 235px;
 }
+
 #rightPart #pieTitle {
     width: 230px;
     height: 30px;
     background-color: #a9a9a9;
     position: absolute;
     line-height: 30px;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
-    top: 220px;
     left: 239px;
+    top: 225px;
 }
-
-#rightPart #parallel {
+#rightPart #pie {
     position: absolute;
-    height: 150px;
-    width: 430px;
-    left: 15px;
-    top: 340px;
+    width: 220px;
+    height: 220px;
+    left: 230px;
+    top: 228px;
 }
 
-
+#rightPart #everydayTitle {
+    width: 370px;
+    height: 30px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    top: 445px;
+}
 #rightPart #everydayAQI {
     position: absolute;
     height: 250px;
     width: 600px;
     left: 5px;
     top: 480px;
-}
-#rightPart #everydayTitle {
-    width: 370px;
-    height: 36px;
-    background-color: #a9a9a9;
-    position: absolute;
-    line-height: 36px;
-    font-size: 18px;
-    text-align: center;
-    top: 440px;
 }
 
 #rightPart #bubselect {
