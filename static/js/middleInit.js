@@ -170,7 +170,12 @@ mapInit();
 
 chart_map.on('click', function (param) {
     choose_list[0] = param.name;
-    TimelineSetUp();
+    if (layer_geo == 'province') {
+        TimelineSetUp();
+    }
+    else{
+        CalenderSetUp();
+    }
     if (choose_geo.indexOf(param.name) == -1) {
         choose_geo.push(param.name);
         pushtext1(choose_geo);
@@ -179,9 +184,8 @@ chart_map.on('click', function (param) {
         choose_geo.pop(param.name);
         pushtext1(choose_geo);
     }
-    
-
 });
+
 chart_map.on('dblclick', function (param) {
     temp_adcode = getAdcode(param.name);
     layer_geo = 'city';
