@@ -124,6 +124,8 @@ body {
 }
 
 
+
+
 /* middle part */
 #middlePart {
     float: left;
@@ -151,6 +153,16 @@ body {
     top: 326px;
 }
 
+#middlePart #bt1 {
+    position: absolute;
+    top: 430px;
+}
+
+#middlePart #bt2 {
+    position: absolute;
+    top: 400px;
+    left: 200px;
+}
 
 #middlePart #themeRiver {
     position: absolute;
@@ -159,24 +171,26 @@ body {
     top: 424px;
 }
 
-#middlePart #selectedtext {
-	position: absolute;
+#selectedtext {
+    position: absolute;
     top: 635px;
-	width: 420px;
-	margin-left: 5px;
-	text-align: left;
-}
-#middlePart p {
-	color: black;
-	font-size: 0.8em;
-	line-height: 1.3em;
+    width: 420px;
+    margin-left: 5px;
+    text-align: left;
 }
 
-#middlePart #sendbutton{
+#middlePart p {
+    color: black;
+    font-size: 0.8em;
+    line-height: 1.3em;
+}
+
+#middlePart #sendbutton {
     position: absolute;
     top: 650px;
     left: 430px;
 }
+
 #middlePart .button {
     border: none;
     color: white;
@@ -185,6 +199,9 @@ body {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+#middlePart #cheap {
+    display: none;
 }
 
 #middlePart .block {

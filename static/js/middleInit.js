@@ -235,9 +235,14 @@ chart_timeline.on('click', function (param) {
 });
 
 chart_map.getZr().on('click', function (event) {
+    console.log(111)
     // 没有 target 意味着鼠标/指针不在任何一个图形元素上，它是从“空白处”触发的。
-    if (!event.target && layer_geo == 'city') {
+    console.log(event)
+    console.log(event.target)
+    console.log(layer_geo)
+    if (event.target == undefined && layer_geo == 'city') {
         layer_geo = 'province';
+        console.log(22)
         mapInit();
     }
 });

@@ -148,7 +148,8 @@ function TimelineSetUp() {
                     data_timeline = [];
                 },
                 success: function (back) {
-                    console.log(back.aqi);
+                    console.log(back.aqi)
+                    console.log(back)
                     for (var i = 0; i < 6; i += 1) {
                         data_timeline.push([
                             (2013 + i).toString(),
@@ -246,6 +247,7 @@ function ThemeRiverSetUp() {
 // }
 
 function mapInit() {
+    console.log('mapInit')
     layer_geo = 'province';
     $.get('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json').done(function (map) {  //读取json文件
         echarts.registerMap("china", map);
@@ -443,9 +445,10 @@ function mapInit() {
             }
 
         }
-        if (option_map && typeof option_map === 'object') {
-            chart_map.setOption(option_map);
-        }
+        // if (option_map && typeof option_map === 'object') {
+        //     chart_map.setOption(option_map);
+        // }
+        chart_map.setOption(option_map);
         MapSetUp(map, '2013');
         layer_geo = 'province';
     });
