@@ -1,5 +1,6 @@
 body {
     background-color: #ffffff;
+    margin: 100px 100px;
 }
 #wholeCanvas {
     width: 1280px;
@@ -8,55 +9,154 @@ body {
     background-color: #fff;
 }
 
-#maintitle{
-    float: left;
-    position: relative;
-    width: 200px;
-    height: 40px;
+#banner {
+    width: 1275px;
+    height: 80px;
+    background-color: #5c5c5c;
+    line-height: 80px;
+    color: #fff;
     margin-left: 6px;
+    box-shadow: 5px 5px 5px #999;
 }
+
+#banner #title {
+    float: left;
+    font-size: 40px;
+}
+
+#banner #showChoose {
+    float: left;
+    height: 80px;
+    font-size: 10px;
+    margin-left: 80px;
+}
+
+#banner p {
+    height: 30px;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+#banner #sendButton {
+    position: relative;
+    float: left;
+    height: 80px;
+    margin-left: 80px;
+}
+#banner #clear {
+    position: absolute;
+    top: 15px;
+}
+#banner #send {
+    position: absolute;
+    top: 45px;
+}
+
+#banner #control {
+    position: relative;
+    width: 600px;
+    height: 80px;
+    line-height: 80px;
+    left: 20px;
+    margin-left: 800px;
+}
+
+#banner #control #selection1 {
+    position: absolute;
+}
+#banner #control #selection2 {
+    position: absolute;
+    left: 160px;
+}
+#banner #control #selection3 {
+    position: absolute;
+    left: 310px;
+}
+
+
+
+
 
 /* leftpart */
 #leftPart {
     float: left;
     position: absolute;
     width: 297px;
-    height: 667px;
-    margin-top: 60px;
+    height: 720px;
+    margin-top: 7px;
     margin-left: 6px;
     border-radius: 0px;
     border: 1px solid #000;
 }
 
+#leftPart #rankTitle {
+    position: absolute;
+    width: 297px;
+    height: 30px;
+    background-color: #a9a9a9;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+}
 #leftPart #rank {
     position: absolute;
     width: 291px;
     height: 140px;
     left: 3px;
+    top: 23px;
 }
 
+#leftPart #stackTitle {
+    position: absolute;
+    width: 297px;
+    height: 30px;
+    background-color: #a9a9a9;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    top: 160px;
+}
 #leftPart #stack {
     position: absolute;
     width: 291px;
     height: 160px;
-    top: 146px;
     left: 3px;
+    top: 180px;
 }
 
+#leftPart #scatterTitle {
+    position: absolute;
+    width: 297px;
+    height: 30px;
+    background-color: #a9a9a9;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    top: 340px;
+}
 #leftPart #scatter {
     position: absolute;
     width: 291px;
     height: 160px;
-    top: 309px;
-    left: 3px;
+    top: 365px;
 }
 
+#leftPart #leftMapTitle {
+    position: absolute;
+    width: 297px;
+    height: 30px;
+    background-color: #a9a9a9;
+    line-height: 30px;
+    font-size: 12px;
+    text-align: center;
+    top: 522px;
+}
 #leftPart #leftMap {
     position: absolute;
     width: 291px;
     height: 175px;
-    top: 472px;
-    left: 3px;
+    top: 545px;
+    left: 10px;
 }
 
 #leftPart .tick line {
@@ -126,6 +226,7 @@ body {
 
 
 
+
 /* middle part */
 #middlePart {
     float: left;
@@ -144,13 +245,24 @@ body {
     position: absolute;
     width: 493px;
     height: 321px;
+    top: 40px;
+}
+
+#middlePart #centerMapTitle {
+    width: 493px;
+    height: 36px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 36px;
+    font-size: 20px;
+    text-align: center;
 }
 
 #middlePart #timeLine {
     position: absolute;
     width: 493px;
     height: 98px;
-    top: 326px;
+    top: 366px;
 }
 
 #middlePart #bt1 {
@@ -168,38 +280,20 @@ body {
     position: absolute;
     width: 493px;
     height: 225px;
-    top: 424px;
+    top: 496px;
 }
 
-#selectedtext {
+#middlePart #themeRiverTitle {
+    width: 493px;
+    height: 36px;
+    background-color: #a9a9a9;
     position: absolute;
-    top: 635px;
-    width: 420px;
-    margin-left: 5px;
-    text-align: left;
-}
-
-#middlePart p {
-    color: black;
-    font-size: 0.8em;
-    line-height: 1.3em;
-}
-
-#middlePart #sendbutton {
-    position: absolute;
-    top: 650px;
-    left: 430px;
-}
-
-#middlePart .button {
-    border: none;
-    color: white;
-    padding: 15px 32px;
+    line-height: 36px;
+    font-size: 20px;
+    top: 460px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
 }
+
 #middlePart #cheap {
     display: none;
 }
@@ -266,13 +360,22 @@ body {
     border: 1px solid #000;
 }
 
-#rightPart #control {
+
+#rightPart #calendar {
     position: absolute;
     width: 600px;
-    height: 100px;
-    top: 0px;
-    left: 12px;
-    /* background-color: gray; */
+    height: 170px;
+    top: 45px;
+    left: 15px;
+}
+#rightPart #calendarTitle {
+    width: 469px;
+    height: 36px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 36px;
+    font-size: 20px;
+    text-align: center;
 }
 
 #rightPart #radar {
@@ -284,15 +387,18 @@ body {
     /* background-color: gray; */
 }
 
-#rightPart #calendar {
+#rightPart #radarTitle {
+    width: 230px;
+    height: 30px;
+    background-color: #a9a9a9;
     position: absolute;
-    width: 600px;
-    height: 170px;
-    top: 45px;
-    left: 15px;
-    
-    /* background-color: gray; */
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    top: 220px;
 }
+
+
 
 #rightPart #pie {
     position: absolute;
@@ -300,8 +406,17 @@ body {
     height: 220px;
     top: 223px;
     left: 230px;
-    
-    /* background-color: gray; */
+}
+#rightPart #pieTitle {
+    width: 230px;
+    height: 30px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    top: 220px;
+    left: 239px;
 }
 
 #rightPart #parallel {
@@ -310,7 +425,6 @@ body {
     width: 430px;
     left: 15px;
     top: 340px;
-    /* background-color: gray;  */
 }
 
 
@@ -319,8 +433,17 @@ body {
     height: 250px;
     width: 600px;
     left: 5px;
-    top: 450px;
-    /* background-color: gray; */
+    top: 480px;
+}
+#rightPart #everydayTitle {
+    width: 370px;
+    height: 36px;
+    background-color: #a9a9a9;
+    position: absolute;
+    line-height: 36px;
+    font-size: 18px;
+    text-align: center;
+    top: 440px;
 }
 
 #rightPart #bubselect {
@@ -333,27 +456,7 @@ body {
     color: gray;
 }
 
-#rightPart #control #selection1 {
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    top: 10px;
-    left: 10px;
-}
-#rightPart #control #selection2 {
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    top: 10px;
-    left: 160px;
-}
-#rightPart #control #selection3 {
-    position: absolute;
-    width: 200px;
-    height: 100px;
-    top: 10px;
-    left: 310px;
-}
+
 
 .bubselector {
     cursor: pointer;

@@ -44,37 +44,19 @@
 </head>
 
 <body>
-    <div id="maintitle">
-        <h1>PollutionVis</h1>
-    </div>  
-    
-    <div id="leftPart">
-        <svg id="rank"></svg>
-        <svg id="stack"></svg>
-        <svg id="scatter"></svg>
-        <svg id="leftMap"></svg>
-    </div>
-
-    <div id="middlePart">
-        <g id="centerMap"></g>
-        <g id="timeLine"></g>
-        <g id="themeRiver"></g>
-        <div class="block">
-            <input data-index="0" id="cheap" type="checkbox" onclick="bt1()" />
-            <label for="cheap" ></label>
-        </div>
-        <div id="selectedtext">
-            <p id='p_area'>选择地区 ：</p>
-            <p id='p_time'>选择时间 ：</p>
-        </div>
-        <div id="sendbutton">
+    <h1 id="banner">
+        <div id="title">PollutionVis</div>
+        
+        <div id="sendButton">
             <input id="clear" type="button" value="清除">
-            <p> </p>
             <input id="send" type="button" value="发送">
         </div>
-    </div>
-    
-    <div id="rightPart">
+
+        <div id="showChoose">
+            <p id='p_area'>选择区域: </p>
+            <p id='p_time'>选择时间: </p>
+        </div>
+
         <div id="control">
             <div id = "selection1">
                 <label class = "select_title">省份：<label>
@@ -110,9 +92,45 @@
             </div>
 
         </div>
-        <div id="radar"></div>
+    </h1>
+    
+    <div id="leftPart">
+        <div id="rankTitle">区域间AQI指数排名及污染等级</div>
+        <svg id="rank"></svg>
+
+        <div id="stackTitle">区域间的IAQI指数百分比堆叠图</div>
+        <svg id="stack"></svg>
+
+        <div id="scatterTitle">所有城市的污染类型聚散情况</div>
+        <svg id="scatter"></svg>
+
+        <div id="leftMapTitle">所有省份的污染类型地理分布情况</div>
+        <svg id="leftMap"></svg>
+    </div>
+
+    <div id="middlePart">
+        <div id="centerMapTitle">中国污染分布情况/中国风向图</div>
+        <g id="centerMap"></g>
+        <g id="timeLine"></g>
+        <div id="themeRiverTitle">城市污染等级比例统计图</div>
+        <g id="themeRiver"></g>
+        <div class="block">
+            <input data-index="0" id="cheap" type="checkbox" onclick="bt1()" />
+            <label for="cheap" ></label>
+        </div>
+    </div>
+    
+    <div id="rightPart">
+        <div id="calendarTitle">一年间六项污染物时变图</div>
         <div id="calendar"></div>
+
+        <div id="radarTitle">风向指标与污染等级分布图</div>
+        <div id="radar"></div>
+        
+        <div id="pieTitle">一年间日主污染物及IAQI</div>
         <div id="pie"></div>
+        
+        <div id="everydayTitle">温度、湿度、压强指标对主污染物影响时变图</div>
         <div id="everydayAQI"></div>
         <div id = "bubselect">
             <label id = "select_bub">y轴<br></label>
