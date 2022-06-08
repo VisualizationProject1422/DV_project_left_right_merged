@@ -1,8 +1,10 @@
 <script>
     function clearcontent(elementID) { 
-        var div = document.getElementById(elementID);   
-        while(div.firstChild) {  
-        div.removeChild(div.firstChild); 
+        var div = document.getElementById(elementID); 
+        if (div != null){
+            while(div.firstChild) {  
+                div.removeChild(div.firstChild); 
+                }  
         }   
     }
     clearcontent('radar')

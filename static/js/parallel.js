@@ -1,20 +1,37 @@
+
+var year = 2013
+var city = "北京市"
+
+console.log(city)
 var myselect = document.getElementById("year");
-var index = myselect.selectedIndex;
+// var index = myselect.selectedIndex;
 // var province = myselect.se
-var year = myselect.options[index].value;
+
+if (myselect != null){
+  if ( myselect.value!=null){
+     year = myselect.value;
+  }
+}
 
 var myselect2 = document.getElementById("cities");
 // var index2=myselect2.selectedIndex;
 // var province = myselect.se
-var city = myselect2.value;
-console.log(myselect2)
+console.log(myselect)
+if (myselect2!= null){
+  // console.log(city)
+  if ( myselect2.value!=""){
+    city = myselect2.value;
+ }
+}
+
+console.log(myselect2.value)
 console.log(city)
 if (city == "市辖区") {
   var myselect3 = document.getElementById("provinces");
   // var index2=myselect2.selectedIndex;
   // var province = myselect.se
   city = myselect3.value;
-  console.log(city)
+  // console.log(city)
   if (city == 11) {
     city = "北京市"
   }
@@ -29,6 +46,7 @@ if (city == "市辖区") {
   }
 }
 
+console.log(city)
 
 // set the dimensions and margins of the graph
 var margin_line = { top: 30, right: 100, bottom: 50, left: 30 },

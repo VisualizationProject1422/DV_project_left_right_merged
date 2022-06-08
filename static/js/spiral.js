@@ -1,33 +1,33 @@
-var myselect = document.getElementById("year");
-var index = myselect.selectedIndex;
-// var province = myselect.se
-var year = myselect.options[index].value;
+// var myselect = document.getElementById("year");
+// var index = myselect.selectedIndex;
+// // var province = myselect.se
+// var year = myselect.options[index].value;
 
-var myselect2 = document.getElementById("cities");
-// var index2=myselect2.selectedIndex;
-// var province = myselect.se
-var city = myselect2.value;
-console.log(myselect2)
-console.log(city)
-if (city == "市辖区") {
-    var myselect3 = document.getElementById("provinces");
-    // var index2=myselect2.selectedIndex;
-    // var province = myselect.se
-    city = myselect3.value;
-    console.log(city)
-    if (city ==11) {
-        city = "北京市"
-    }
-    if (city ==31) {
-        city = "上海市"
-    }
-    if (city ==50) {
-        city = "重庆市"
-    }
-    if (city ==12) {
-        city = "天津市"
-    }
-}
+// var myselect2 = document.getElementById("cities");
+// // var index2=myselect2.selectedIndex;
+// // var province = myselect.se
+// var city = myselect2.value;
+// console.log(myselect2)
+// console.log(city)
+// if (city == "市辖区") {
+//     var myselect3 = document.getElementById("provinces");
+//     // var index2=myselect2.selectedIndex;
+//     // var province = myselect.se
+//     city = myselect3.value;
+//     console.log(city)
+//     if (city ==11) {
+//         city = "北京市"
+//     }
+//     if (city ==31) {
+//         city = "上海市"
+//     }
+//     if (city ==50) {
+//         city = "重庆市"
+//     }
+//     if (city ==12) {
+//         city = "天津市"
+//     }
+// }
 
 
 
@@ -84,7 +84,7 @@ var path = svg_spiral.append("path")
     .style("fill", "none")
     .style("stroke", "steelblue");
 
-var spiralLength = path.node().getTotalLength(),
+var spiralLength = 1115,
     N = 365,
     barWidth = (spiralLength / N) - 0.5;
 // var someData = [];
