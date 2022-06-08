@@ -13,8 +13,11 @@ from sklearn.mixture import GaussianMixture as GMM
 
 # rank & stack
 def choose_extraction(layer_time, layer_geo, choose_time, choose_geo):
+    print(layer_time, layer_geo, choose_time, choose_geo)
+    print(len(choose_time))
     for i in range(len(choose_time)):        
         filePath = f'static/innerData/{layer_geo}_AQI_IAQI/{layer_time}/{choose_time[i]}.csv'
+        print('filePath: ', filePath)
         once_time_data = pd.read_csv(filePath)
         once_time_data = once_time_data[once_time_data[layer_geo].isin(choose_geo)]
         if i == 0:

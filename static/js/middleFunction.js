@@ -10,7 +10,7 @@ var layer_geo = 'province';
 var layer_time = 'day';
 var mapIndex = 1;
 
-function rank(value) {
+function middleRank(value) {
     if (value > 300) {
         r = '严重污染'
     }
@@ -429,7 +429,7 @@ function mapInit() {
                         var co = Math.round(params.data.CO);
                         var o3 = Math.round(params.data.O3);
                         var res = params.data.name
-                            + ' : ' + rank(aqi)
+                            + ' : ' + middleRank(aqi)
                             + '<br/>AQI指数 : ' + aqi
                             + '<br/>PM2.5 : ' + pm2_5
                             + '<br/>PM10 : ' + pm10

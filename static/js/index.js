@@ -3,7 +3,6 @@
 // layer_geo：此刻地图显示在哪一层级。province/city
 // choose_geo：一个list，里面存着需要比较的对象  e.g. ['浙江省', '江苏省'] or ['杭州市', '湖州市']
 // choose_time: 一个list 选中的时间段 e.g ['2013','2014']
-var choose_geo = []
 var provinces = document.querySelectorAll('.province')
 for (var i = 0; i < provinces.length; i++) {
     provinces[i].addEventListener('click', function() {
@@ -12,7 +11,7 @@ for (var i = 0; i < provinces.length; i++) {
         this.style.color = 'red'
     })
 }
-var choose_time = []
+
 var times = document.querySelectorAll('.time')
 for (var i = 0; i < times.length; i++) {
     times[i].addEventListener('click', function() {
@@ -583,8 +582,8 @@ const render_leftMap = function(province_tsne_data){
 $("#send").click(function () {
     // console.log(choose_time)
     // console.log(choose_geo)
-    var layer_time = $("#layer_time_input").val()
-    var layer_geo = $("#layer_geo_input").val()
+    // layer_time = $("#layer_time_input").val()
+    // layer_geo = $("#layer_geo_input").val()
     // 发送需求
     $.ajax({
         url: "http://127.0.0.1:5000/receive",
