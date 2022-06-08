@@ -2,12 +2,6 @@ body {
     background-color: #ffffff;
     margin: 100px 100px;
 }
-#wholeCanvas {
-    width: 1280px;
-    height: 720px;
-    margin: 100px auto;
-    background-color: #fff;
-}
 
 #banner {
     width: 1275px;
@@ -15,8 +9,11 @@ body {
     background-color: #5c5c5c;
     line-height: 80px;
     color: #fff;
-    margin-left: 6px;
     box-shadow: 5px 5px 5px #999;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    margin-bottom: 2px;
 }
 
 #banner #title {
