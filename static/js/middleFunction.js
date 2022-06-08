@@ -253,9 +253,6 @@ function mapInit() {
         echarts.registerMap("china", map);
         data_map = map;
         option_map = {
-            title: {
-                text: '中国污染分布情况',
-            },
             tooltip: {},
             visualMap: {
                 pieces: [
@@ -471,12 +468,6 @@ function WindSetUp(date) {
             minMag = Math.min(mag, minMag);
         }
         chart_map.setOption({
-            title: {
-                text: '中国风向图',
-                textStyle: {
-                    color: 'white',
-                }
-            },
             backgroundColor: '#001122',
             visualMap: {
                 left: 'left',
