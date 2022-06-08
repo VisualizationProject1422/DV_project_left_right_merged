@@ -65,11 +65,6 @@ var svg_spiral = d3.select("#pie").append("svg")
     .append("g")
     .attr("transform", "translate(" + (width1 / 2 - 5) + "," + (height1 / 2 + 5) + ")");
 
-svg_spiral.append("text")
-    .style("font-size", "8px")
-    .text("每日主要污染物及其IAQI")
-    .attr("transform", "translate(" + (- width1 / 2 + 70) + "," + (-height1 / 2 + 10) + ")");
-
 var points = d3.range(start, end + 0.001, (end - start) / 1000);
 
 var spiral = d3.radialLine()

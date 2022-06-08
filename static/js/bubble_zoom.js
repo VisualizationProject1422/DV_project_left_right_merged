@@ -881,10 +881,6 @@ if (type == "psfc") {
 
 
 Svg.append("text")
-    .style("font-size", "9px")
-    .html("不同时间下，温度、湿度、压强对主要污染物的影响")
-    .attr("transform", "translate(" + (-20) + "," + (-20) + ")");
-Svg.append("text")
-    .style("font-size", "9px")
+    .style("font-size", "12px")
     .html("（点击拖动以放大，选取legend以高亮）")
-    .attr("transform", "translate(" + (-20) + "," + (-5) + ")");
+    .attr("transform", "translate(" + (-20) + "," + (-10) + ")");

@@ -104,8 +104,8 @@ d3.json(`static/data/` + year + `/sunburst/year/` + city + `.json`, (error, root
 
     svg.append("text")
     .style("font-size", "9px")
-    .text("各风向下污染严重情况（点击进行放大）")
-    .attr("transform", "translate(" + (- width1 / 2 + 55) + "," + (-height1 / 2+5) + ")");
+    .text("（点击进行放大）")
+    .attr("transform", "translate(" + (- width1 / 2 ) + "," + (-height1 / 2+200) + ")");
 
     var slice = svg.selectAll('g.slice')
         .data(partition(root).descendants());

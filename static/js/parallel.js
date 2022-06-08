@@ -64,7 +64,7 @@ var svg_line = d3.select("#calendar")
 
 svg_line.append("text")
   .style("font-size", "8px")
-  .text("年度六项污染物变化情况(点击上方标签，选择或取消显示线条)")
+  .text("(点击上方标签，选择或取消显示线条)")
   .attr("transform", "translate(" + 0 + "," +(-20)+ ")");
 
 //Read the data
