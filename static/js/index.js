@@ -584,6 +584,11 @@ $("#send").click(function () {
     // console.log(choose_geo)
     // layer_time = $("#layer_time_input").val()
     // layer_geo = $("#layer_geo_input").val()
+    $('#rank').empty()
+    $('#stack').empty()
+    $('#scatter').empty()
+    $('#leftMap').empty()
+
     // 发送需求
     $.ajax({
         url: "http://127.0.0.1:5000/receive",
