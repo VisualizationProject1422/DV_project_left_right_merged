@@ -151,16 +151,6 @@ body {
     top: 326px;
 }
 
-#middlePart #bt1 {
-    position: absolute;
-    top: 430px;
-}
-
-#middlePart #bt2 {
-    position: absolute;
-    top: 400px;
-    left: 200px;
-}
 
 #middlePart #themeRiver {
     position: absolute;
@@ -197,49 +187,55 @@ body {
     font-size: 16px;
 }
 
-#middlePart input[type=checkbox]{
-	height: 0;
-	width: 0;
-	visibility: hidden;
+#middlePart input {
+    display: none;
+}
+
+#middlePart .block {
+    width: 100px;
+    position: relative;
+    clear: both;
+    margin: 0 0 12.5px;
+    float: left;
 }
 
 #middlePart label {
-    left: 450px;
-    top:-10px;
-	cursor: pointer;
-	text-indent: -9999px;
-	width: 40px;
-	height: 20px;
-	background: #bada55;
-	display: block;
-	border-radius: 20px;
-	position: relative;
+    left: 435px;
+    top: 5px;
+    width: 50px;
+    height: 25px;
+    box-sizing: border-box;
+    border: 1.5px solid;
+    float: left;
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: .3s ease;
 }
 
-#middlePart label:after {
-	content: '';
-	position: absolute;
-	top: 1px;
-	left: 1px;
-	width: 18px;
-	height: 18px;
-	background: #fff;
-	border-radius: 18px;
-	transition: 0.15s;
+#middlePart input[type=checkbox]:checked+label {
+    background: #55e868;
 }
 
-#middlePart input:checked + label {
-	background: #2080a0;
+#middlePart input[type=checkbox]:checked+label:before {
+    left: 25px;
 }
 
-#middlePart input:checked + label:after {
-	left: calc(100% - 1px);
-	transform: translateX(-100%);
+#middlePart label:before {
+    transition: .3s ease;
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background: white;
+    left: 1px;
+    top: 1px;
+    box-sizing: border-box;
+    border: 1.5px solid;
+    color: black;
+    border-radius: 50px;
 }
 
-#middlePart label:active:after {
-	width: 26px;
-}
 
 
 
