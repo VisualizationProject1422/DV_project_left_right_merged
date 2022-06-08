@@ -22,6 +22,7 @@ body {
 #banner #title {
     float: left;
     font-size: 40px;
+    margin-left: 10px;
 }
 
 #banner #showChoose {
