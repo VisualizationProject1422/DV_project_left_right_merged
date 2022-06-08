@@ -94,11 +94,6 @@ option_timeline = {
 };
 
 option_themeriver = {
-
-    title: {
-        text: '城市污染等级比例统计图',
-        right: 10
-    },
     color: ["#1a9850", "#91cf60", "#d9ef8b", "#fee08b", "#fc8d59", "#d73027"],
     dataZoom: {
         id: 'dataZoomX',
@@ -195,9 +190,6 @@ chart_map.on('dblclick', function (param) {
         data_map = map;
         echarts.registerMap(param.name, map);
         chart_map.setOption({
-            title: {
-                text: param.name + '污染分布情况'
-            },
             series: {
                 map: param.name,
                 top: 40,
