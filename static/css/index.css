@@ -59,26 +59,26 @@ body {
     left: 3px;
 }
 
-.tick line {
+#leftPart .tick line {
     stroke: #a9a9a9;
 }
-.domain {
+#leftPart .domain {
     visibility: hidden;
 }
 
 
 /* for leftMap */
-.state {
+#leftPart .state {
     fill: none;
     stroke: #a9a9a9;
     stroke-width: 1;
 }
 
-.state:hover {
+#leftPart .state:hover {
     fill-opacity: 0.5;
 }
 
-#tooltip {
+#leftPart #tooltip {
     position: absolute;
     text-align: center;
     padding: 20px;
@@ -90,12 +90,12 @@ body {
     pointer-events: none;
 }
 
-#tooltip h4 {
+#leftPart #tooltip h4 {
     margin: 0;
     font-size: 14px;
 }
 
-#tooltip {
+#leftPart #tooltip {
     background: rgba(0, 0, 0, 0.9);
     border: 1px solid grey;
     border-radius: 5px;
@@ -106,20 +106,20 @@ body {
     opacity: 0;
 }
 
-#tooltip table {
+#leftPart #tooltip table {
     table-layout: fixed;
 }
 
-#tooltip tr td {
+#leftPart #tooltip tr td {
     padding: 0;
     margin: 0;
 }
 
-#tooltip tr td:nth-child(1) {
+#leftPart #tooltip tr td:nth-child(1) {
     width: 50px;
 }
 
-#tooltip tr td:nth-child(2) {
+#leftPart #tooltip tr td:nth-child(2) {
     text-align: center;
 }
 
@@ -169,25 +169,25 @@ body {
     top: 424px;
 }
 
-#selectedtext {
+#middlePart #selectedtext {
 	position: absolute;
     top: 635px;
 	width: 420px;
 	margin-left: 5px;
 	text-align: left;
 }
-p {
+#middlePart p {
 	color: black;
 	font-size: 0.8em;
 	line-height: 1.3em;
 }
 
-#sendbutton{
+#middlePart #sendbutton{
     position: absolute;
     top: 650px;
     left: 430px;
 }
-.button {
+#middlePart .button {
     border: none;
     color: white;
     padding: 15px 32px;
@@ -197,13 +197,13 @@ p {
     font-size: 16px;
 }
 
-input[type=checkbox]{
+#middlePart input[type=checkbox]{
 	height: 0;
 	width: 0;
 	visibility: hidden;
 }
 
-label {
+#middlePart label {
     left: 450px;
     top:-10px;
 	cursor: pointer;
@@ -216,7 +216,7 @@ label {
 	position: relative;
 }
 
-label:after {
+#middlePart label:after {
 	content: '';
 	position: absolute;
 	top: 1px;
@@ -228,18 +228,19 @@ label:after {
 	transition: 0.15s;
 }
 
-input:checked + label {
+#middlePart input:checked + label {
 	background: #2080a0;
 }
 
-input:checked + label:after {
+#middlePart input:checked + label:after {
 	left: calc(100% - 1px);
 	transform: translateX(-100%);
 }
 
-label:active:after {
+#middlePart label:active:after {
 	width: 26px;
 }
+
 
 
 
@@ -403,26 +404,3 @@ label:active:after {
     stroke-width: 0.5px;
     stroke: white;
   }
-
-
-#temp1 {
-    float: left;
-    position: absolute;
-    /* width: 469px;
-    height: 720px; */
-    margin-top: 860px;
-    margin-left:10px;
-    border-radius: 0px;
-    border: 1px solid #000;
-}
-
-#temp2 {
-    float: left;
-    position: absolute;
-    /* width: 469px;
-    height: 720px; */
-    margin-top: 900px;
-    margin-left:10px;
-    border-radius: 0px;
-    border: 1px solid #000;
-}
