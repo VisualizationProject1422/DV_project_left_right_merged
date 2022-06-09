@@ -13,11 +13,11 @@ from sklearn.mixture import GaussianMixture as GMM
 
 # rank & stack
 def choose_extraction(layer_time, layer_geo, choose_time, choose_geo):
-    print(layer_time, layer_geo, choose_time, choose_geo)
-    print(len(choose_time))
+    # print(layer_time, layer_geo, choose_time, choose_geo)
+    # print(len(choose_time))
     for i in range(len(choose_time)):        
         filePath = f'static/innerData/{layer_geo}_AQI_IAQI/{layer_time}/{choose_time[i]}.csv'
-        print('filePath: ', filePath)
+        # print('filePath: ', filePath)
         once_time_data = pd.read_csv(filePath)
         once_time_data = once_time_data[once_time_data[layer_geo].isin(choose_geo)]
         if i == 0:
@@ -139,7 +139,7 @@ def all_layer_scatter(layer_time, choose_time, obj):
     choose_time_data.loc[:, 'AQI':'O3_IAQI'] /= len(choose_time)
     AQI_col = choose_time_data['AQI']
     choose_time_data = choose_time_data.drop(['AQI'], axis=1)
-    print(choose_time_data)
+    # print(choose_time_data)
     
     # 加label
     # buffer = attach_label(layer_time, choose_time, choose_time_data.copy())
@@ -164,7 +164,7 @@ def all_layer_scatter(layer_time, choose_time, obj):
     # 再做一个gmm
     X = tsne_choose_data_df.loc[:, 'x':'y']
     X = X.values
-    gmm = GMM(n_components=8).fit(X) #指定聚类中心个数为8
+    gmm = GMM(n_components=5).fit(X) #指定聚类中心个数为
     gmm_label = gmm.predict(X)
     # print(gmm_label, len(gmm_label))
     tsne_choose_data_df['gmm_label'] = gmm_label
@@ -178,6 +178,15 @@ def all_layer_scatter(layer_time, choose_time, obj):
     # print(tsne_choose_data_df)
     tsne_choose_data_dict = tsne_choose_data_df.to_dict(orient='records')
     return tsne_choose_data_dict
+
+def readProvinceCity():
+    province_city_data = pd.read_csv('static/trytry.csv')
+    print('WWWWW')
+    print(province_city_data)
+    print(type(province_city_data))
+    return province_city_data.to_dict(orient='records')
+    # return province_city_data.to_dict
+
 
 # layer_time = 'year'
 # layer_geo = 'province'

@@ -174,8 +174,14 @@ mapInit();
 
 
 chart_map.on('click', function (param) {
+    
     choose_list[0] = param.name;
-    TimelineSetUp();
+    if (layer_geo == 'province') {
+        TimelineSetUp();
+    }
+    else{
+        CalenderSetUp('2013');
+    }
     if (choose_geo.indexOf(param.name) == -1) {
         choose_geo.push(param.name);
         pushtext1(choose_geo);
@@ -184,14 +190,12 @@ chart_map.on('click', function (param) {
         choose_geo.pop(param.name);
         pushtext1(choose_geo);
     }
-    
-
 });
 chart_map.on('dblclick', function (param) {
     temp_adcode = getAdcode(param.name);
     layer_geo = 'city';
     $.get('https://geo.datav.aliyun.com/areas_v3/bound/' + temp_adcode + '_full.json').done(function (map) {  //读取json文件
-        console.log(map);
+        // console.log(map);
         data_map = map;
         echarts.registerMap(param.name, map);
         chart_map.setOption({
@@ -210,14 +214,15 @@ chart_map.on('dblclick', function (param) {
 
 });
 
-chart_timeline.on('click', function (param) {
-    console.log(param);
+chart_timeline.on('click', 'series', function (param) {
+    // console.log(param);
     if (param.seriesIndex == 2) {
         CalenderSetUp(param.data[0].toString());
         MapSetUp(data_map, param.data[0].toString());
+
     };
     if (param.seriesIndex == 0) {
-        console.log(param.data[0])
+        // console.log(param.data[0])
         var time = +echarts.number.parseDate(param.data[0]);
         date_2 = echarts.format.formatTime('yyyyMMdd00', time)
         if (choose_time.indexOf(date_2) == -1) {
@@ -233,16 +238,26 @@ chart_timeline.on('click', function (param) {
         }
     }
 });
+chart_timeline.getZr().on('click', function (param) {
+    // console.log(param);
+    if (param.target.style.text) {
+        if (param.target.style.text.length == 4) {
+            if (choose_time.indexOf(param.target.style.text) == -1) {
+                choose_time.push(param.target.style.text);
+                pushtext2(choose_time);
+            }
+            else {
+                choose_time.pop(param.target.style.text);
+                pushtext2(choose_time);
+            }
+        }
+    }
+})
 
 chart_map.getZr().on('click', function (event) {
-    console.log(111)
     // 没有 target 意味着鼠标/指针不在任何一个图形元素上，它是从“空白处”触发的。
-    console.log(event)
-    console.log(event.target)
-    console.log(layer_geo)
     if (event.target == undefined && layer_geo == 'city') {
         layer_geo = 'province';
-        console.log(22)
         mapInit();
     }
 });

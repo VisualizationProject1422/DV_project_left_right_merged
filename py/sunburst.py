@@ -33,10 +33,10 @@ for year in range(2015,2019):
         #data reading region
         print(city)
         for month in months:
-            path = "../data/daily_processed/"+str(year)+month
+            path = "data/"+str(year)+'/'+str(year)+month
             files= os.listdir(path)
             # print(files)
-            data=pd.read_csv("../data/daily_processed/"+str(year)+month+"/"+"processed_CN-Reanalysis-daily-"+str(year)+month+"0100.csv",header=0, sep=",",usecols=["城市"])
+            data=pd.read_csv("data/"+str(year)+'/'+str(year)+month+"/"+"processed_CN-Reanalysis-daily-"+str(year)+month+"0100.csv",header=0, sep=",",usecols=["城市"])
             list_city = []
             flag =0 
             for i in range(0,len(data)):
@@ -49,7 +49,7 @@ for year in range(2015,2019):
                         
             for file in files:
                 # print(file)
-                data=pd.read_csv("../data/daily_processed/"+str(year)+month+"/"+file,header=0, sep=",",usecols=["AQI","指数类别","城市"," U(m/s)"," V(m/s)"])
+                data=pd.read_csv("data/"+str(year)+'/'+str(year)+month+"/"+file,header=0, sep=",",usecols=["AQI","指数类别","城市"," U(m/s)"," V(m/s)"])
                 # print(type(data))
                 # print(data)
                 for i in list_city:

@@ -131,8 +131,8 @@ def receive():
     layer_geo = request.args['layer_geo']
     choose_time = eval(request.args['choose_time'])
     choose_geo = eval(request.args['choose_geo'])
-    print("后端接收到的数据：\n", layer_time, layer_geo, choose_time, choose_geo)
-    print("后端接收到的数据类型为：\n", type(layer_time), type(layer_geo), type(choose_time), type(choose_geo))
+    # print("后端接收到的数据：\n", layer_time, layer_geo, choose_time, choose_geo)
+    # print("后端接收到的数据类型为：\n", type(layer_time), type(layer_geo), type(choose_time), type(choose_geo))
     return "请求成功"
 
 @app.route('/extraction', methods=['GET'])
@@ -157,12 +157,19 @@ def scatter():
 def leftMap():
     global layer_time, choose_time
     leftMap_data = chartProcess.all_layer_scatter(layer_time, choose_time, 'province')
-    print('后端leftMap处理后的数据为：\n', leftMap_data)
-    print('后端leftMap处理后的数据类型为：\n', type(leftMap_data))
+    # print('后端leftMap处理后的数据为：\n', leftMap_data)
+    # print('后端leftMap处理后的数据类型为：\n', type(leftMap_data))
     # print(len(leftMap_data))
     leftMap_json = jsonify(leftMap_data)
     return leftMap_json
 
+@app.route('/readProvinceCity', methods=['GET'])
+def readProvinceCity():
+    # print('QQQQQ')
+    province_city_data = chartProcess.readProvinceCity()
+    # print(province_city_data)
+    province_city_json = jsonify(province_city_data)
+    return province_city_json
 
 # middlePart
 @app.route('/CalenderSetUp', methods=['POST','GET'])

@@ -1,3 +1,7 @@
+document.onclick = function(e) {
+    console.log(e.pageX)
+    console.log(e.pageY)
+}
 // 参数
 // layer_time: 表示目前选中的时间粒度  year/month/day
 // layer_geo：此刻地图显示在哪一层级。province/city
@@ -80,7 +84,6 @@ const render_rank = function (data, obj) {
             buffer = buffer.substring(buffer.length - 1)
             d3.select(`#rank_text${buffer}`)
                 .style('opacity', 1)
-
             tooltip.html( d[obj] + "<br>"
                         + "AQI: " + parseInt(d.AQI) + "<br>"
                         + "AQI_level: " + AQI_level_rule[d3.select(this).attr('AQI_level')]
@@ -214,7 +217,7 @@ const render_stack = function (naiveData, naiveStack, naiveKeys, search_obj, max
     g.selectAll('.stack_group').data(naiveStack).enter().append('g')
         .attr('class', 'stack_group')
         .attr('id', function(d, i) {
-            console.log(`stack_group${i}`)
+            // console.log(`stack_group${i}`)
             return `stack_group${i}`
         })
         .attr('fill', datum => color(datum.key))
@@ -308,7 +311,7 @@ const innerHeight_scatter = height_scatter - margin_scatter.top - margin_scatter
 //     '其他型':"LightSteelBlue"};
 // scatter的render函数
 const render_scatter = function(city_tsne_data) {
-    // console.log(city_tsne_data)
+    console.log(city_tsne_data)
     const maingroup = scatter.append('g')
         .attr("id", "tsneMainGroup")
         .attr("transform", `translate(${margin_scatter.left}, ${margin_scatter.top})`)
@@ -369,15 +372,13 @@ const render_scatter = function(city_tsne_data) {
     scatter_dots.selectAll("circle")
                     .data(city_tsne_data).enter()
                     .append("circle")
-                        .attr('class', 'dot')
-                        .attr('id', d => 'id' + d['gmm_label'])
+                        .attr('class', d => `dot cityType${d.gmm_label}`)
+                        .attr('id', d => d.city)
                         .attr("cx", d => xScale(d.x))
                         .attr("cy", d => yScale(d.y))
                         .attr("r", 2.5)
                         .attr("fill", d => polluteColorScale(d['gmm_label']))
                         .attr("fill-opacity", 0.8)
-                        .attr('stroke', 'black')
-                        .attr('stroke-width', 0.1)
                         .on("mousemove", function (d, i) {
                             tooltip.html("pollute_group: " + d.gmm_label + "<br>" + "city: " + d.city)
                                     .style('opacity', 1)
@@ -385,15 +386,18 @@ const render_scatter = function(city_tsne_data) {
                                     .style("left", (event.pageX + 5) + "px")
                             d3.selectAll('.dot')
                                 .style('opacity', 0.2)
-                            d3.selectAll(`#id${d.gmm_label}`)
+                            d3.selectAll(`.cityType${d.gmm_label}`)
                                 .attr('r', 4.5)
                                 .style('opacity', 0.8)
+                                .attr('stroke', 'black')
+                                .attr('stroke-width', 0.1)
                         })
                         .on("mouseout", function (d, i) {
                             tooltip.style('opacity', 0)
                             d3.selectAll('.dot')
                                 .attr('r', 2.5)
                                 .style('opacity', 0.8)
+                                .attr('stroke', 'none')
                         });
 
     // new X axis
@@ -442,8 +446,26 @@ const margin_leftMap = { top: 15, right: 15, bottom: 20, left: 30 };
 const innerWidth_leftMap = width_leftMap - margin_leftMap.left - margin_leftMap.right;
 const innerHeight_leftMap = height_leftMap - margin_leftMap.top - margin_leftMap.bottom;
 
+const highlightCities = function(province, province_city_data) {
+    // console.log(province)
+    if (province.length >= 4 && (province == '内蒙古自治区' || province == '黑龙江省')) {
+        province = province.slice(0, 3)
+    } else {
+        province = province.slice(0, 2)
+    }
+    // console.log(province)
+    var city_list = []
+    province_city_data.forEach(item => {
+        if (item.Province == province) {
+            city_list.push(item['City_Admaster'])
+        }
+    })
+    // console.log(city_list)
+    return city_list
+}
+
 // leftMap的render函数
-const render_leftMap = function(province_tsne_data){
+const render_leftMap = function(province_tsne_data, province_city_data){
     const naiveGroups = ['group0', 'group1', 'group2', 'group3', 'group4', 'group5', 'group6', 'group7']
     // 画legend
     var leftMapLegendG = leftMap.selectAll('leftMapG')
@@ -460,8 +482,8 @@ const render_leftMap = function(province_tsne_data){
 
                                 d3.select(this)
                                     .style('opacity', 1)
-                                console.log(i)
-                                d3.selectAll(`.type${i}`)
+                                // console.log(i)
+                                d3.selectAll(`.provinceType${i}`)
                                     .style('opacity', 1)
                                     .style('stroke-width', 1)
                                     .style('stroke', 'black')
@@ -513,12 +535,25 @@ const render_leftMap = function(province_tsne_data){
             })
             .attr('class', function(d, i) {
                 var pollute_type = d3.select(this).attr('type')
-                return `leftMapPath type${pollute_type}`
+                return `leftMapPath provinceType${pollute_type}`
             })
             .attr("fill", function (d, i) {
                 return polluteColorScale(d3.select(this).attr('type'))
             })
             .attr("d", path)   //使用地理路径生成器
+            .on('mouseover', function(d) {
+                var city_list = highlightCities(d.properties.name, province_city_data)
+                console.log(city_list)
+                d3.selectAll('.dot')
+                    .style('opacity', 0.2)
+                city_list.forEach(city_name => {
+                    d3.select(`#${city_name}`)
+                        .style('opacity', 0.8)
+                        .attr('r', 4.5)
+                        .attr('stroke', 'black')
+                        .attr('stroke-width', 0.1)
+                })
+            })
             .on("mousemove", function (d, i) {
                 var pollute_province = province_tsne_data.find(item => item.province == d.properties.name)
                 var pollute_type = d3.select(this).attr('type')
@@ -541,13 +576,13 @@ const render_leftMap = function(province_tsne_data){
                 d3.selectAll('.leftMapG')
                     .style('opacity', 0.4)
 
-                d3.selectAll(`.type${pollute_type}`)
+                d3.selectAll(`.provinceType${pollute_type}`)
                     .style('opacity', 1)
                     .style('stroke-width', 1)
                     .style('stroke', 'black')
-                console.log(d)
                 d3.select(`#leftMapG${pollute_type}`)
                     .style('opacity', 1)
+                
             })
             .on("mouseout", function (d, i) {
                 tooltip.style('opacity', 0)
@@ -556,6 +591,11 @@ const render_leftMap = function(province_tsne_data){
                     .style('stroke', 'none')
                 d3.selectAll('.leftMapG')
                     .style('opacity', 1)
+                
+                d3.selectAll('.dot')
+                    .style('opacity', 0.8)
+                    .attr('r', 2.5)
+                    .attr('stroke', 'none')
             })
             .style('opacity', 0)
         
@@ -574,7 +614,6 @@ const render_leftMap = function(province_tsne_data){
             .style("opacity", 1)
     })
 }
-
 
 
 
@@ -610,9 +649,10 @@ $("#send").click(function () {
     // rank stack 统一进行 发送 && 接收; 再分别进行 处理 && 渲染
     // chart1 2 接收处理好的数据 && 处理 && 渲染
     $.getJSON("http://127.0.0.1:5000/extraction", function (extraction_data) {
-        // console.log('前端extraction接收到的数据data', extraction_data)
-        // console.log("前端extraction接收到的数据的类型：" + typeof (extraction_data))
+        console.log('前端extraction接收到的数据data', extraction_data)
+        console.log("前端extraction接收到的数据的类型：" + typeof (extraction_data))
         // chart1: rank  需要的 已经有了
+        // processLongName(extraction_data, layer_geo)
         render_rank(extraction_data, layer_geo)
 
         // chart2: stack  对stack需要进一步处理
@@ -644,7 +684,7 @@ $("#send").click(function () {
     // chart3: scatter 显示在不同时间段下，中国所有城市的污染类型聚集情况。
     // 参数：layer_time choose_time
     $.getJSON("http://127.0.0.1:5000/scatter", function(scatter_data) {
-        // console.log('前端scatter接收到的数据data', scatter_data)
+        console.log('前端scatter接收到的数据data', scatter_data)
         // console.log("前端scatter接收到的数据的类型：" + typeof (scatter_data))
         render_scatter(scatter_data)
     })
@@ -652,10 +692,15 @@ $("#send").click(function () {
     // chart4: leftMap 显示在不同时间段下，中国所有省份的污染类型地理分布。
     // 参数：layer_time choose_time
     $.getJSON("http://127.0.0.1:5000/leftMap", function(leftMap_data) {
-        console.log('前端leftMap接收到的数据data', leftMap_data)
+        console.log('前端leftMap接收到的数据data', leftMap_data)    
         // console.log("前端leftMap接收到的数据的类型：" + typeof (leftMap_data))
-        render_leftMap(leftMap_data)
+        $.getJSON("http://127.0.0.1:5000/readProvinceCity", function(province_city_data) {
+            console.log('前端readProvinceCity接收到的数据data', province_city_data)
+            render_leftMap(leftMap_data, province_city_data)
+        })
     })
+
+    
 
 })
 

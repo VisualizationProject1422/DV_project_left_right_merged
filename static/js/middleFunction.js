@@ -70,7 +70,7 @@ function MapSetUp(map, year) {
         contentType: "application/json;charset=utf-8",
         data: JSON.stringify(data),
         beforeSend: function () {
-            console.log(data);
+            // console.log(data);
         },
         success: function (back) {
             chart_map.setOption({
@@ -148,8 +148,8 @@ function TimelineSetUp() {
                     data_timeline = [];
                 },
                 success: function (back) {
-                    console.log(back.aqi)
-                    console.log(back)
+                    // console.log(back.aqi)
+                    // console.log(back)
                     for (var i = 0; i < 6; i += 1) {
                         data_timeline.push([
                             (2013 + i).toString(),
@@ -181,7 +181,7 @@ function TimelineSetUp() {
                     data_timeline = [];
                 },
                 success: function (back) {
-                    console.log(back.aqi);
+                    // console.log(back.aqi);
                     for (var i = 0; i < 6; i += 1) {
                         data_timeline.push([
                             (2013 + i).toString(),
@@ -247,7 +247,7 @@ function ThemeRiverSetUp() {
 // }
 
 function mapInit() {
-    console.log('mapInit')
+    // console.log('mapInit')
     layer_geo = 'province';
     $.get('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json').done(function (map) {  //读取json文件
         echarts.registerMap("china", map);

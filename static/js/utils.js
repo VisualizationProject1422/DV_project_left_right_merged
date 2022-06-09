@@ -44,10 +44,10 @@ var scatter = left_part.select('#scatter');
 var leftMap = left_part.select('#leftMap');
 
 
-var tooltip = left_part.append("div")
+var tooltip = body.append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
-    .style("background-color", "white")
+    .style("background-color", 'white')
     .style("border", "solid")
     .style("border-width", "2px")
     .style("border-radius", "5px")
@@ -58,3 +58,13 @@ var tooltip = left_part.append("div")
 const polluteColorScale = d3.scaleOrdinal()
     .domain([0, 7])
     .range(d3.schemeSet2)
+
+// const rank_title = d3.select('#rankTitle')
+// rank_title.on('click', function() {
+//     console.log(event.pageX)
+//     console.log(event.pageY)
+//     tooltip.style('top', this.event.pageY + 'px')
+//             .style('left', this.event.pageY + 'px')
+// })
+
+
