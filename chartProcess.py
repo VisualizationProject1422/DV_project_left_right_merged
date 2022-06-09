@@ -180,10 +180,10 @@ def all_layer_scatter(layer_time, choose_time, obj):
     return tsne_choose_data_dict
 
 def readProvinceCity():
-    province_city_data = pd.read_csv('static/trytry.csv')
-    print('WWWWW')
-    print(province_city_data)
-    print(type(province_city_data))
+    province_city_data = pd.read_csv('static/china_city_list.csv')
+    # print('WWWWW')
+    # print(province_city_data)
+    # print(type(province_city_data))
     return province_city_data.to_dict(orient='records')
     # return province_city_data.to_dict
 

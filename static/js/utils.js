@@ -67,4 +67,3 @@ const polluteColorScale = d3.scaleOrdinal()
 //             .style('left', this.event.pageY + 'px')
 // })
 
-
