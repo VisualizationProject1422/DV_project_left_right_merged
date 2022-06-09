@@ -23,7 +23,7 @@ jinja_partials.register_extensions(app)
 
 
 def getProvDate(prov,date):
-    with open('.\static\innerData\province_AQI_IAQI\day\\'+date+'00.csv', encoding= 'utf-8') as f:
+    with open('./static/innerData/province_AQI_IAQI/day//'+date+'00.csv', encoding= 'utf-8') as f:
         f_csv = csv.DictReader(f)
         for row in f_csv:
             if row['province'] == prov:
@@ -31,7 +31,7 @@ def getProvDate(prov,date):
                 return(row['AQI'])
 
 def getCityDate(city,date):
-    with open('.\static\innerData\city_AQI_IAQI\day\\'+date+'00.csv', encoding= 'utf-8') as f:
+    with open('./static/innerData/city_AQI_IAQI/day//'+date+'00.csv', encoding= 'utf-8') as f:
         f_csv = csv.DictReader(f)
         for row in f_csv:
             if row['city'] == city:
@@ -48,7 +48,7 @@ def getProv(prov):
     o3 =[]
     while i in range(6):
         year = str(2013 + i)
-        with open('.\static\innerData\province_AQI_IAQI\year\\'+year+'.csv', encoding= 'utf-8') as f:
+        with open('./static/innerData/province_AQI_IAQI/year//'+year+'.csv', encoding= 'utf-8') as f:
             f_csv = csv.DictReader(f)
             for row in f_csv:
                 if row['province'] == prov:
@@ -76,7 +76,7 @@ def getCity(city):
     o3 =[]
     while i in range(6):
         year = str(2013 + i)
-        with open('.\static\innerData\city_AQI_IAQI\year\\'+year+'.csv', encoding= 'utf-8') as f:
+        with open('./static/innerData/city_AQI_IAQI/year//'+year+'.csv', encoding= 'utf-8') as f:
             f_csv = csv.DictReader(f)
             for row in f_csv:
                 if row['city'] == city:
@@ -131,16 +131,16 @@ def receive():
     layer_geo = request.args['layer_geo']
     choose_time = eval(request.args['choose_time'])
     choose_geo = eval(request.args['choose_geo'])
-    # print("后端接收到的数据：\n", layer_time, layer_geo, choose_time, choose_geo)
-    # print("后端接收到的数据类型为：\n", type(layer_time), type(layer_geo), type(choose_time), type(choose_geo))
+    # print("后端接收到的数据：/n", layer_time, layer_geo, choose_time, choose_geo)
+    # print("后端接收到的数据类型为：/n", type(layer_time), type(layer_geo), type(choose_time), type(choose_geo))
     return "请求成功"
 
 @app.route('/extraction', methods=['GET'])
 def extraction():
     global layer_time, layer_geo, choose_time, choose_geo
     extraction_data = chartProcess.choose_extraction(layer_time, layer_geo, choose_time, choose_geo)
-    # print('后端extraction处理后的数据为：\n', extraction_data)
-    # print('后端extraction处理后的数据类型为：\n', type(extraction_data))
+    # print('后端extraction处理后的数据为：/n', extraction_data)
+    # print('后端extraction处理后的数据类型为：/n', type(extraction_data))
     extraction_json = jsonify(extraction_data)
     return extraction_json
 
@@ -148,8 +148,8 @@ def extraction():
 def scatter():
     global layer_time, choose_time
     scatter_data = chartProcess.all_layer_scatter(layer_time, choose_time, 'city')
-    # print('后端scatter处理后的数据为：\n', scatter_data)
-    # print('后端scatter处理后的数据类型为：\n', type(scatter_data))
+    # print('后端scatter处理后的数据为：/n', scatter_data)
+    # print('后端scatter处理后的数据类型为：/n', type(scatter_data))
     scatter_json = jsonify(scatter_data)
     return scatter_json
 
@@ -157,8 +157,8 @@ def scatter():
 def leftMap():
     global layer_time, choose_time
     leftMap_data = chartProcess.all_layer_scatter(layer_time, choose_time, 'province')
-    # print('后端leftMap处理后的数据为：\n', leftMap_data)
-    # print('后端leftMap处理后的数据类型为：\n', type(leftMap_data))
+    # print('后端leftMap处理后的数据为：/n', leftMap_data)
+    # print('后端leftMap处理后的数据类型为：/n', type(leftMap_data))
     # print(len(leftMap_data))
     leftMap_json = jsonify(leftMap_data)
     return leftMap_json
@@ -210,7 +210,7 @@ def TimelineSetUp():
 def ThemeRiverSetUp():
     data = {}
     if request.method == 'POST' :
-        with open('.\static\innerData\\theme.csv', encoding= 'utf-8') as f:
+        with open('./static/innerData//theme.csv', encoding= 'utf-8') as f:
             f_csv = csv.DictReader(f)
             i = 0
             for row in f_csv:
