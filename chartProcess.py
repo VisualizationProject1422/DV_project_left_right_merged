@@ -164,7 +164,7 @@ def all_layer_scatter(layer_time, choose_time, obj):
     # 再做一个gmm
     X = tsne_choose_data_df.loc[:, 'x':'y']
     X = X.values
-    gmm = GMM(n_components=5).fit(X) #指定聚类中心个数为
+    gmm = GMM(n_components=8).fit(X) #指定聚类中心个数为
     gmm_label = gmm.predict(X)
     # print(gmm_label, len(gmm_label))
     tsne_choose_data_df['gmm_label'] = gmm_label
