@@ -311,7 +311,8 @@ const innerHeight_scatter = height_scatter - margin_scatter.top - margin_scatter
 //     '其他型':"LightSteelBlue"};
 // scatter的render函数
 const render_scatter = function(city_tsne_data) {
-    console.log(city_tsne_data)
+    // console.log(city_tsne_data)
+    console.log(choose_geo)
     const maingroup = scatter.append('g')
         .attr("id", "tsneMainGroup")
         .attr("transform", `translate(${margin_scatter.left}, ${margin_scatter.top})`)
@@ -368,9 +369,66 @@ const render_scatter = function(city_tsne_data) {
     var scatter_dots = maingroup.append('g')
         .attr("clip-path", "url(#clip)")
     
-    // Add circles
+    // city_tsne_data.forEach(item => {
+    //     console.log(item.city)
+    //     console.log(choose_geo)
+    //     if (item.city in choose_geo) {
+    //         console.log('enter')
+    //         console.log(item)
+    //     }
+    // })
+    var rect_point = []
+    var circle_point = []
+    choose_geo.forEach(choose_city_name => {
+        var item_tsne_data = city_tsne_data.find(item => item.city == choose_city_name)
+        rect_point.push(item_tsne_data)
+    })
+
+    circle_point = city_tsne_data.filter(function (val) { return rect_point.indexOf(val) === -1 })
+    console.log(rect_point)
+    console.log(circle_point)
+    
+    // add choose_city's circles
+    if (layer_geo == 'city') {
+        scatter_dots.selectAll('rect')
+            .data(rect_point).enter()
+            .append('rect')
+                .attr('class', d => `rect cityType${d.gmm_label}`)
+                .attr('id', d => d.city)
+                .attr("x", d => xScale(d.x))
+                .attr("y", d => yScale(d.y))
+                .attr("width", 14)
+                .attr('height', 14)
+                .attr("fill", d => polluteColorScale(d['gmm_label']))
+                .attr("fill-opacity", 0.8)
+                .attr('stroke', 'black')
+                .attr('stroke-width', 0.5)
+                .on("mousemove", function (d, i) {
+                    tooltip.html("pollute_group: " + d.gmm_label + "<br>" + "city: " + d.city)
+                            .style('opacity', 1)
+                            .style("top", (event.pageY) + "px")
+                            .style("left", (event.pageX + 5) + "px")
+                    // d3.selectAll('.dot')
+                    //     .style('opacity', 0.2)
+                    // d3.selectAll(`.cityType${d.gmm_label}`)
+                    //     .attr('r', 4.5)
+                    //     .style('opacity', 0.8)
+                    //     .attr('stroke', 'black')
+                    //     .attr('stroke-width', 0.1)
+                })
+                .on("mouseout", function (d, i) {
+                    tooltip.style('opacity', 0)
+                    // d3.selectAll('.dot')
+                    //     .attr('r', 2.5)
+                    //     .style('opacity', 0.8)
+                    //     .attr('stroke', 'none')
+                });
+    } else {
+        circle_point = city_tsne_data
+    }
+    // Add other circles
     scatter_dots.selectAll("circle")
-                    .data(city_tsne_data).enter()
+                    .data(circle_point).enter()
                     .append("circle")
                         .attr('class', d => `dot cityType${d.gmm_label}`)
                         .attr('id', d => d.city)
@@ -414,7 +472,12 @@ const render_scatter = function(city_tsne_data) {
         .duration(2000)
         .attr("cx", d => xScale(d.x))
         .attr("cy", d => yScale(d.y))
-    
+    maingroup.selectAll(".rect")
+        .transition()
+        .delay(function (d, i) { return (i * 3) })
+        .duration(2000)
+        .attr("x", d => xScale(d.x))
+        .attr("y", d => yScale(d.y))
     // A function that updates the chart when the user zoom and thus new boundaries are available
     function updateChart() {
         // recover the new scale
@@ -426,9 +489,13 @@ const render_scatter = function(city_tsne_data) {
         d3.select('.ySacleGroup').call(d3.axisLeft(newYScale).tickSize(-innerWidth_scatter))
 
         // update circle position
+        scatter_dots.selectAll(".rect")
+            .attr("x", d => newXScale(d.x))
+            .attr("y", d => newYScale(d.y))
         scatter_dots.selectAll(".dot")
             .attr("cx", d => newXScale(d.x))
             .attr("cy", d => newYScale(d.y))
+        
     }
 
     d3.selectAll('.tick text').attr('font-size', '1em');

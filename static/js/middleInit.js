@@ -308,7 +308,7 @@ chart_timeline.getZr().on('click', function (param) {
 })
 
 chart_map.getZr().on('click', function (event) {
-    console.log(event)
+    // console.log(event)
     // 没有 target 意味着鼠标/指针不在任何一个图形元素上，它是从“空白处”触发的。
     if (!event.target && layer_geo == 'city') {
         layer_geo = 'province';
